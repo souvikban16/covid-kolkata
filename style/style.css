@@ -3,5 +3,9 @@ body{
 }
 
 .add-value:hover{
-    color: #e91e63 ;
+    color: #1976d2 ;
+}
+
+.covid-icon{
+    color: #e53935;
 }
