@@ -2,15 +2,15 @@
 <?php
   
 // Username is root
-$user = 'sql6410200';
-$password = '8VAtkLmzsA'; 
+$user = 'sql11410206';
+$password = 'DDzfjguSIF'; 
   
 // Database name is gfg
-$database = 'sql6410200'; 
+$database = 'sql11410206'; 
   
 // Server is localhost with
 // port number 3308
-$servername='sql6.freesqldatabase.com:3306';
+$servername='sql11.freesqldatabase.com:3306';
 $mysqli = new mysqli($servername, $user, 
                 $password, $database);
   
