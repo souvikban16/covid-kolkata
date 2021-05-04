@@ -2,15 +2,15 @@
 <?php
   
 // Username is root
-$user = 'root';
-$password = ''; 
+$user = 'sql6410200';
+$password = '8VAtkLmzsA'; 
   
 // Database name is gfg
-$database = 'hospital_data'; 
+$database = 'sql6410200'; 
   
 // Server is localhost with
 // port number 3308
-$servername='localhost';
+$servername='sql6.freesqldatabase.com:3306';
 $mysqli = new mysqli($servername, $user, 
                 $password, $database);
   
@@ -20,7 +20,7 @@ if ($mysqli->connect_error) {
     $mysqli->connect_errno . ') '. 
     $mysqli->connect_error);
 }
-$counter=2;
+$counter=1;
 // SQL query to select data from database
 $sql = "SELECT * FROM data";
 $result = $mysqli->query($sql);
@@ -75,14 +75,7 @@ $mysqli->close();
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td scope="row">1</td>
-                <td>Beleghata ID</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-                          <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
             <?php   // LOOP TILL END OF DATA 
                 while($rows=$result->fetch_assoc())
                 {
