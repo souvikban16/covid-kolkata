@@ -34,7 +34,7 @@ $mysqli->close();
                 </span>
               </a>
               <a href="index.php">
-                <input class="btn btn-primary" type="button" value="Back to Lists">
+                <input class="btn btn-primary" type="button" value="Back to List">
               </a>
             </div>
         </nav>
@@ -67,17 +67,50 @@ $mysqli->close();
         <div class="spinner-border collapse" id="spinner" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
-        <div class="result col-6 collapse" id="result">
-            <div class="card">
-                <div class="card-header">
-                    Data info
+        <div class="resultpane row">
+            <!-- results of hospital select -->
+            <div class="result col-6 collapse" id="result">
+                <div class="card">
+                    <div class="card-header">
+                        Hospital info
+                    </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="hospitalName">Special title treatment</h5>
+                    <p class="card-text" id="currentBeds">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text" id="addedBy">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary" onclick="displayUpdatePane()">Update</a>
                 </div>
-            <div class="card-body">
-                <h5 class="card-title" id="hospitalName">Special title treatment</h5>
-                <p class="card-text" id="currentBeds">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text" id="addedBy">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Update</a>
+                </div>
             </div>
+            <!-- update window -->
+            <div class="col-6 collapse" id="update" >
+                <div class="card">
+                    <div class="card-header">
+                        Update Info
+                        <button type="button"  style="float: right" class="btn btn-close" aria-label="Close" onclick="closeUpdate()"></button>
+                    </div>
+                    <div class="card-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Enter your name</span>
+                            <input type="text" id="name" class="form-control" aria-label="Name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Enter beds</span>
+                            <input type="number" id="beds" class="form-control" aria-label="Beds">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text">More details if any</span>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                        <br>
+                        <button type="button" id="updateBtn" class="btn btn-primary" onclick="updateData()">
+                            <span id="statusSpinner" class="spinner-border spinner-border-sm collapse" role="status" aria-hidden="true"></span>
+                            <span id="status">Update</span>
+                        </button>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
 
