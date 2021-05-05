@@ -36,7 +36,6 @@ $mysqli->close();
               <a href="index.php">
                 <input class="btn btn-primary" type="button" value="Back to Lists">
               </a>
-              <input class="btn btn-primary" type="button" value="Back to Lists">
             </div>
         </nav>
         <br>

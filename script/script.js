@@ -29,6 +29,5 @@ function requestData(){
     };
     xhttp.open("POST", "requestData.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    alert(requestString);
     xhttp.send(requestString);
 };
