@@ -40,6 +40,7 @@ $mysqli->close();
         </nav>
         <br>
         <br>
+        <span><h1> <strong>1.</strong> <span style="color: grey">Update existing hospitals</span></h1></span>
         <h4>Please find the Hospital name from the dropdown below and provide the number of beds</h4>
         <br>
 
@@ -111,6 +112,87 @@ $mysqli->close();
                     </form>
                     </div>
                 </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center"><h1 style="color:grey">Or</h1></div>
+        <br>
+        <span><h1> <strong>2.</strong> <span style="color: grey">Create new entry</span></h1></span>
+        <br>
+        <h4>Enter details of the hospital below and provide the number of beds</h4>
+        <br>
+        <!-- new hospital -->
+        <div class="col-6 " id="create" >
+                <div class="card">
+                    <div class="card-header">
+                        Create Info
+                    </div>
+                    <div class="card-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Enter your name</span>
+                            <input type="text" id="createName" class="form-control" aria-label="Name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Enter Hospital Name</span>
+                            <input type="text" id="createHospitalName" class="form-control" aria-label="Name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Enter beds</span>
+                            <input type="number" id="createBeds" class="form-control" aria-label="Beds">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-text">More details if any</span>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                        <br>
+                        <button type="button" id="createBtn" class="btn btn-primary" onclick="createData()">
+                            <span id="statusCreateSpinner" class="spinner-border spinner-border-sm collapse" role="status" aria-hidden="true"></span>
+                            <span id="statusCreate">Create</span>
+                        </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Modal -->
+        <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true" >
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Status</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                New entry has been created;
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/index.php">
+                <button type="button" class="btn btn-primary">Return to List</button>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Duplicate Entry Modal -->
+        <div class="modal fade" id="duplicateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true" >
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Failure</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Failed to create new entry
+                <br>
+                Please check if duplicate hospital exists and try again.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
             </div>
         </div>
 
