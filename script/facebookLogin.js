@@ -67,15 +67,15 @@ function prepWebsite(response){
             console.log("id = " + response.id);
             document.getElementById("logOutBtn").classList.remove("collapse");
           });
-          FB.api(
-            '/me/picture/',
-            'GET',
-            {},
-            function(response) {
-                // Insert your code here
-                console.log(response);
-            }
-          );
+			FB.api(
+			  '/me/picture',
+			  'GET',
+			  {"fields":"redirect,url"},
+			  function(response) {
+			      // Insert your code here
+			      console.log(response);
+			  }
+			);
 
     }
 }
