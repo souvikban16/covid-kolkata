@@ -68,7 +68,7 @@ function prepWebsite(response){
             document.getElementById("logOutBtn").classList.remove("collapse");
           });
           FB.api(
-            '/100067863031717/picture',
+            '/me/picture',
             'GET',
             {"redirect":"false"},
             function(response) {
