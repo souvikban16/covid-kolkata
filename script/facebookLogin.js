@@ -70,11 +70,12 @@ function prepWebsite(response){
           FB.api(
             '/me/picture/',
             'GET',
-            {"redirect":"false"},
+            {},
             function(response) {
                 // Insert your code here
                 console.log(response);
             }
           );
+
     }
 }
