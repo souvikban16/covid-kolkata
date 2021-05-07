@@ -22,8 +22,11 @@ $mysqli->close();
     <title>Covid Help Kolkata</title>
 </head>
 <body>
+<!-- Load facebook scripts -->
+<script src="/script/facebookLogin.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <div class="container">
-        <nav class="navbar sticky-top navbar-dark bg-dark">
+        <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <span class="material-icons d-inline-block align-text-bottom covid-icon">
@@ -33,9 +36,20 @@ $mysqli->close();
                     COVID Help Kolkata
                 </span>
               </a>
-              <a href="index.php">
-                <input class="btn btn-primary" type="button" value="Back to List">
-              </a>
+              <div class="navbar-nav">
+                <div class=" btn nav-link">
+                    <span class="material-icons d-inline-block align-text-bottom">
+                        account_circle
+                    </span>
+                    <span id="profileName">
+                        Not logged in
+                    </span>
+                    <button type="button" class="btn btn-danger collapse" id="logOutBtn" onclick="logOut()">Log out</button>
+                </div>
+                <a href="/index.php" class="nav-link">
+                    <button type="button" class="btn btn-primary">Back to List</button>
+                </a>
+            </div>
             </div>
         </nav>
         <br>
@@ -47,17 +61,17 @@ $mysqli->close();
         <form class="row">
         <label for="exampleDataList" class="form-label">Hospital Name</label>
         <div class="col-6">
-            
+
             <input class="form-control" list="datalistOptions" id="hospitalList" placeholder="Type to search..." onchange="selectHospital()">
             <datalist id="datalistOptions" >
             <option disabled selected value> -- select an option -- </option>
             <?php // LOOP TILL END OF DATA
-            while ($rows = $result->fetch_assoc()) {
-            ?>
+while ($rows = $result->fetch_assoc()) {
+    ?>
              <option value="<?php echo $rows['hospital']; ?>">
              <?php
-                }
-            ?>
+}
+?>
             </datalist>
         </div>
         <div class="col-6">
@@ -214,5 +228,6 @@ $mysqli->close();
 
             myModal.addEventListener('shown.bs.modal', function () {myInput.focus()})
     </script>
+    
 </body>
 </html>

@@ -69,6 +69,15 @@ function closeUpdate(){
 };
 
 function createData(){
+  //first check if person is logged into facebook
+  if(checkLogin()==="connected"){
+    pass;
+  }
+  else{
+    return;
+  }
+
+
   //make the button loading animation
   document.getElementById('createBtn').classList.add("disabled");
   document.getElementById('statusCreate').innerHTML="Creating";
