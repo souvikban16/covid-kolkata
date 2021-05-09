@@ -23,7 +23,7 @@ $mysqli->close();
     <title>Covid Help Kolkata</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <!-- Navbar and begining text -->
         <nav class="navbar sticky-top navbar-dark bg-dark">
             <div class="container-fluid">
@@ -36,7 +36,7 @@ $mysqli->close();
                 </span>
               </a>
               <a href="/contribute.php">
-                <input class="btn btn-primary" type="button" value="I want to contribute">
+                <input class="btn btn-primary btn-sm" type="button" value="I want to contribute">
               </a>
               
             </div>
@@ -47,8 +47,8 @@ $mysqli->close();
           <br>
 
           <!-- Main table begins here -->
-
-          <table class="table table table-striped table-hover">
+          <div class="table-responsive">
+          <table class="table table-striped table-hover ">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -71,21 +71,21 @@ while ($rows = $result->fetch_assoc()) {
                 <!-- Button trigger modal -->
                 <td>
                 <div data-bs-toggle="tooltip" data-bs-placement="left" title="Updated by <?php echo $rows['addedBy3']; ?>" >
-                  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>3">
+                  <button type="button" class="btn btn-outline-danger btnTable" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>3">
                     <?php echo $rows['earlier']; ?>
                   </button>
                 </div>
                 </td>
                 <td>
                 <div data-bs-toggle="tooltip" data-bs-placement="left" title="Updated by <?php echo $rows['addedBy2']; ?>" >
-                  <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>2">
+                  <button type="button" class="btn btn-outline-warning btnTable" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>2">
                     <?php echo $rows['last']; ?>
                   </button>
                 </div>
                 </td>
                 <td>
                 <div data-bs-toggle="tooltip" data-bs-placement="left" title="Updated by <?php echo $rows['addedBy1']; ?>" >
-                  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>1">
+                  <button type="button" class="btn btn-outline-success btnTable" data-bs-toggle="modal" data-bs-target="#Modal_<?php echo $counter ?>1">
                     <?php echo $rows['latest']; ?>
                   </button>
                 </div>
@@ -160,6 +160,10 @@ while ($rows = $result->fetch_assoc()) {
 ?>
             </tbody>
           </table>
+
+          </div>
+
+          
 
     </div>
 

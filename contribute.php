@@ -19,13 +19,14 @@ $mysqli->close();
     <link rel="stylesheet" href="/style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <title>Covid Help Kolkata</title>
 </head>
 <body>
 <!-- Load facebook scripts -->
 <script src="/script/facebookLogin.js"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
@@ -38,16 +39,16 @@ $mysqli->close();
               </a>
               <div class="navbar-nav">
                 <div class=" btn nav-link">
-                    <span class="material-icons d-inline-block align-text-bottom">
+                    <span class="material-icons d-inline-block align-text-bottom" id="profile">
                         account_circle
                     </span>
                     <span id="profileName">
                         Not logged in
                     </span>
-                    <button type="button" class="btn btn-danger collapse" id="logOutBtn" onclick="logOut()">Log out</button>
+                    <button type="button" class="btn btn-danger collapse btnNav" id="logOutBtn" onclick="logOut()">Log out</button>
                 </div>
                 <a href="/index.php" class="nav-link">
-                    <button type="button" class="btn btn-primary">Back to List</button>
+                    <button type="button" class="btn btn-primary btnNav">Back to List</button>
                 </a>
             </div>
             </div>
@@ -84,7 +85,7 @@ while ($rows = $result->fetch_assoc()) {
         </div>
         <div class="resultpane row">
             <!-- results of hospital select -->
-            <div class="result col-6 collapse" id="result">
+            <div class="result col-lg-6 collapse" id="result">
                 <div class="card">
                     <div class="card-header">
                         Hospital info
@@ -98,7 +99,7 @@ while ($rows = $result->fetch_assoc()) {
                 </div>
             </div>
             <!-- update window -->
-            <div class="col-6 collapse" id="update" >
+            <div class="col-lg-6 collapse" id="update" >
                 <div class="card">
                     <div class="card-header">
                         Update Info
@@ -136,7 +137,7 @@ while ($rows = $result->fetch_assoc()) {
         <h4>Enter details of the hospital below and provide the number of beds</h4>
         <br>
         <!-- new hospital -->
-        <div class="col-6 " id="create" >
+        <div class="col-lg-6 " id="create" >
                 <div class="card">
                     <div class="card-header">
                         Create Info
@@ -222,7 +223,10 @@ while ($rows = $result->fetch_assoc()) {
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="logIn()" >Login to Facebook</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="logIn()" >
+                Login to Facebook
+                <i class="bi bi-facebook"></i>
+                </button>
                 </div>
             </div>
             </div>

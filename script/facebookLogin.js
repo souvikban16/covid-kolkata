@@ -24,6 +24,7 @@ function checkLogin(){
                 console.log(response);
                 document.getElementById("profileName").innerHTML= response.name;
                 document.getElementById("logOutBtn").classList.remove("collapse");
+                document.getElementById("profile").style="color: green";
               });
             returnStatement =  "connected";
         }

@@ -18,3 +18,22 @@ body{
 .profile{
     color: aliceblue;
 }
+
+@media screen and (max-width: 720px) {
+    body {
+      font-size: 0.80rem;
+    }
+    .btnTable{
+        font-size: 0.75rem;
+    }
+    .navbar-expand {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .navbar-nav{
+        font-size: 00.75rem;
+    }
+    .btnNav{
+        font-size: 00.75rem;
+    }
+  }
