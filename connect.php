@@ -3,26 +3,26 @@
 // Username is root
 
 // main server creds
-$user = 'sql11410206';
-$password = 'DDzfjguSIF';
+// $user = 'sql11410206';
+// $password = 'DDzfjguSIF';
 
 //local test creds
-// $user = 'root';
-// $password = '';
+$user = 'root';
+$password = '';
 
 // main server database name
-$database = 'sql11410206';
+// $database = 'sql11410206';
 
 // local test database 
-// $database = 'hospital_data';
+$database = 'hospital_data';
 
 // Server is localhost with
 
 // main servername with port
-$servername = 'sql11.freesqldatabase.com:3306';
+// $servername = 'sql11.freesqldatabase.com:3306';
 
 // local test servername
-// $servername = 'localhost';
+$servername = 'localhost';
 
 $mysqli = new mysqli($servername, $user,
     $password, $database);

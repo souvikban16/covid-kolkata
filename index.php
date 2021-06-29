@@ -3,7 +3,7 @@
 require "connect.php";
 $counter = 1;
 // SQL query to select data from database
-$sql = "SELECT * FROM data";
+$sql = "SELECT * FROM hospital";
 $result = $mysqli->query($sql);
 $mysqli->close();
 ?>

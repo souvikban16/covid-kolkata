@@ -1,6 +1,6 @@
 <?php
 require "connect.php";
-$sql = "SELECT * FROM data WHERE hospital=".$_POST['hospital'];
+$sql = "SELECT * FROM table WHERE hospital=".$_POST['hospital'];
 $result = $mysqli->query($sql);
 $mysqli->close();
 $response=$result->fetch_assoc();
@@ -11,7 +11,7 @@ $latest=$response['latest'];
 $addedBy1=$response['addedBy1'];
 $newBeds=$_POST['beds'];
 $newUser=$_POST['name'];
-$insertsql = "UPDATE data SET earlier=".$last.", addedBy3='".$addedBy2."', last=".$latest.", addedBy2='".$addedBy1."', latest=".$newBeds.", addedBy1=".$newUser." WHERE hospital=".$_POST['hospital'];
+$insertsql = "UPDATE hospital SET earlier=".$last.", addedBy3='".$addedBy2."', last=".$latest.", addedBy2='".$addedBy1."', latest=".$newBeds.", addedBy1=".$newUser." WHERE hospital=".$_POST['hospital'];
 echo $insertsql;
 $newMysqli = new mysqli($servername, $user,
     $password, $database);
